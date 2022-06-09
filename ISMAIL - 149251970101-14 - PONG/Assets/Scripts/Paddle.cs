@@ -14,6 +14,7 @@ public class Paddle : MonoBehaviour
     void Start()
     {
         rig = GetComponent<Rigidbody2D>();
+        Debug.Log("Paddle Speed : " + speed);
     }
 
     // Update is called once per frame
