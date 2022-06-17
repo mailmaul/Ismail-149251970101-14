@@ -65,14 +65,16 @@ public class BallControl : MonoBehaviour
 
     public void ActivatePaddleSpeedUp()
     {
-        rig.velocity *= magnitude;
+        paddle.GetComponent<Paddle>().speed = paddle.GetComponent<Paddle>().speed * 2;
+        paddle2.GetComponent<Paddle>().speed = paddle.GetComponent<Paddle>().speed * 2;
         paddle.GetComponent<SpriteRenderer>().color = Color.red;
         Debug.Log("Paddle Speed Bertambah");
     }
 
         public void DeactivatePaddleSpeedUp()
     {
-        rig.velocity /= magnitude;
+        paddle.GetComponent<Paddle>().speed = paddle.GetComponent<Paddle>().speed / 2;
+        paddle2.GetComponent<Paddle>().speed = paddle.GetComponent<Paddle>().speed / 2;
         paddle.GetComponent<SpriteRenderer>().color = Color.white;
         Debug.Log("Paddle Speed Normal");
     }
