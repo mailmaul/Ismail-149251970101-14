@@ -10,4 +10,14 @@ public class MainMenuController : MonoBehaviour
         Debug.Log("Created by ISMAIL - 149251970101-14");
         SceneManager.LoadScene("Game");
     }
+
+    public void Credit()
+    {
+        SceneManager.LoadScene("Credit");
+    }
+
+    public void BackToMainMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
 }

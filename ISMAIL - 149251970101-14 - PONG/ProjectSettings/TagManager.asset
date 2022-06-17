@@ -3,16 +3,21 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Ball
+  - Paddle
+  - PU-SpeedBall
+  - PU-SpeedPaddle
+  - PU-LongPaddle
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Background
   - Water
   - UI
-  - 
-  - 
+  - Paddle
+  - Bola
   - 
   - 
   - 
@@ -38,8 +43,14 @@ TagManager:
   - 
   - 
   m_SortingLayers:
-  - name: BG
-    uniqueID: 3622713635
+  - name: Bola
+    uniqueID: 3340419497
+    locked: 0
+  - name: Paddle
+    uniqueID: 4291656255
+    locked: 0
+  - name: Background
+    uniqueID: 2717696239
     locked: 0
   - name: Default
     uniqueID: 0

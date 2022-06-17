@@ -4,7 +4,11 @@ ScriptsOnlyBuild:
     - BallControl
     - GoalController
     - MainMenuController
+    - PU_PaddleUp
+    - PU_SpeedPaddleController
+    - PU_SpeedUpController
     - Paddle
+    - PowerUpManager
     - ScoreController
     - ScoreManager
     Unity.2D.Animation.Editor.dll:
@@ -22,6 +26,12 @@ ScriptsOnlyBuild:
     - UnityEditor.Tilemaps.TilemapPrefabStageHelper
     Unity.Rider.Editor.dll:
     - Packages.Rider.Editor.UnitTesting.CallbackData
+    UnityEditor.Graphs.dll:
+    - UnityEditor.Graphs.AnimationBlendTree.Graph
+    - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.Graph
+    - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
+    - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
     - UnityEditor.TestTools.TestRunner.TestListCacheData
@@ -33,8 +43,60 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.CanvasScaler
     - UnityEngine.UI.GraphicRaycaster
     - UnityEngine.UI.Image
+    - UnityEngine.UI.Outline
     - UnityEngine.UI.Text
   sceneClasses:
+    Assets/Scenes/Credit.unity:
+    - Class: 1
+      Script: {instanceID: 0}
+    - Class: 4
+      Script: {instanceID: 0}
+    - Class: 20
+      Script: {instanceID: 0}
+    - Class: 21
+      Script: {instanceID: 0}
+    - Class: 28
+      Script: {instanceID: 0}
+    - Class: 48
+      Script: {instanceID: 0}
+    - Class: 81
+      Script: {instanceID: 0}
+    - Class: 104
+      Script: {instanceID: 0}
+    - Class: 114
+      Script: {instanceID: 1518}
+    - Class: 114
+      Script: {instanceID: 2254}
+    - Class: 114
+      Script: {instanceID: 2688}
+    - Class: 114
+      Script: {instanceID: 2746}
+    - Class: 114
+      Script: {instanceID: 2862}
+    - Class: 114
+      Script: {instanceID: 3098}
+    - Class: 114
+      Script: {instanceID: 3350}
+    - Class: 114
+      Script: {instanceID: 3470}
+    - Class: 114
+      Script: {instanceID: 3784}
+    - Class: 115
+      Script: {instanceID: 0}
+    - Class: 128
+      Script: {instanceID: 0}
+    - Class: 157
+      Script: {instanceID: 0}
+    - Class: 196
+      Script: {instanceID: 0}
+    - Class: 213
+      Script: {instanceID: 0}
+    - Class: 222
+      Script: {instanceID: 0}
+    - Class: 223
+      Script: {instanceID: 0}
+    - Class: 224
+      Script: {instanceID: 0}
     Assets/Scenes/Game.unity:
     - Class: 1
       Script: {instanceID: 0}
@@ -61,25 +123,39 @@ ScriptsOnlyBuild:
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 1710}
+      Script: {instanceID: 1518}
     - Class: 114
-      Script: {instanceID: 2268}
+      Script: {instanceID: 1696}
     - Class: 114
-      Script: {instanceID: 2550}
+      Script: {instanceID: 2254}
     - Class: 114
-      Script: {instanceID: 2702}
+      Script: {instanceID: 2536}
     - Class: 114
-      Script: {instanceID: 2874}
+      Script: {instanceID: 2688}
     - Class: 114
-      Script: {instanceID: 3110}
+      Script: {instanceID: 2862}
     - Class: 114
-      Script: {instanceID: 3358}
+      Script: {instanceID: 3098}
     - Class: 114
-      Script: {instanceID: 22342}
+      Script: {instanceID: 3286}
     - Class: 114
-      Script: {instanceID: 22356}
+      Script: {instanceID: 3324}
     - Class: 114
-      Script: {instanceID: 22370}
+      Script: {instanceID: 3350}
+    - Class: 114
+      Script: {instanceID: 3470}
+    - Class: 114
+      Script: {instanceID: 3784}
+    - Class: 114
+      Script: {instanceID: 3820}
+    - Class: 114
+      Script: {instanceID: 4270}
+    - Class: 114
+      Script: {instanceID: 4478}
+    - Class: 114
+      Script: {instanceID: 5588}
+    - Class: 114
+      Script: {instanceID: 5796}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -116,21 +192,21 @@ ScriptsOnlyBuild:
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 1532}
+      Script: {instanceID: 1518}
     - Class: 114
-      Script: {instanceID: 2268}
+      Script: {instanceID: 2254}
     - Class: 114
-      Script: {instanceID: 2702}
+      Script: {instanceID: 2688}
     - Class: 114
-      Script: {instanceID: 2874}
+      Script: {instanceID: 2746}
     - Class: 114
-      Script: {instanceID: 3110}
+      Script: {instanceID: 2862}
     - Class: 114
-      Script: {instanceID: 3358}
+      Script: {instanceID: 3098}
     - Class: 114
-      Script: {instanceID: 3478}
+      Script: {instanceID: 3350}
     - Class: 114
-      Script: {instanceID: 17394}
+      Script: {instanceID: 3470}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -204,7 +280,7 @@ ScriptsOnlyBuild:
     className: Selectable
   - hash:
       serializedVersion: 2
-      Hash: cc5a5ffd422b48777a2d8b612778510c
+      Hash: deed199c3e6c82add4a598fe26821a04
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Paddle
@@ -282,7 +358,7 @@ ScriptsOnlyBuild:
     className: IKManager2D
   - hash:
       serializedVersion: 2
-      Hash: 6f5c8283e2123aaa0f11b5249add51e3
+      Hash: f286cf10966bd7a6925151106be4c3f7
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: BallControl
@@ -292,6 +368,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: CanvasScaler
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: MainMenuController
   - hash:
       serializedVersion: 2
       Hash: cf9f5cf2c3145a37ac07f00e50e460f9
@@ -372,6 +454,18 @@ ScriptsOnlyBuild:
     className: TestResultRendererCallback
   - hash:
       serializedVersion: 2
+      Hash: d82e8c0c1fa347bccaff3544b48419ca
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: ScoreController
+  - hash:
+      serializedVersion: 2
+      Hash: fb266b45858d26a4f244a67197edb8a6
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: ScoreManager
+  - hash:
+      serializedVersion: 2
       Hash: 748dd2a2a28da4e618912da5ac45684b
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.EventSystems
@@ -436,6 +530,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: Outline
+  - hash:
+      serializedVersion: 2
+      Hash: ae615f3b5c70821ea94535ce23fe8267
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: PowerUpManager
   - hash:
       serializedVersion: 2
       Hash: c3d3430df9e3ea95e3e3d587961390fb
@@ -510,6 +610,12 @@ ScriptsOnlyBuild:
     className: EventTrigger
   - hash:
       serializedVersion: 2
+      Hash: ea1dd473464716859f83547c1c52094d
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: PU_SpeedUpController
+  - hash:
+      serializedVersion: 2
       Hash: 87cef3c82381dc586f6772c3e27561b6
     assemblyName: Unity.2D.Animation.Runtime.dll
     namespaceName: UnityEngine.Experimental.U2D.Animation
@@ -538,6 +644,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: SignalTrack
+  - hash:
+      serializedVersion: 2
+      Hash: ea1dd473464716859f83547c1c52094d
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: PU_SpeedPaddleController
   - hash:
       serializedVersion: 2
       Hash: aba7b2852ef61d175dd9602e7723d5e5
@@ -648,6 +760,12 @@ ScriptsOnlyBuild:
     className: BufferManager
   - hash:
       serializedVersion: 2
+      Hash: ea1dd473464716859f83547c1c52094d
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: PU_PaddleUp
+  - hash:
+      serializedVersion: 2
       Hash: 8220b46879dc5e37db1b940c938f5744
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
@@ -672,36 +790,19 @@ ScriptsOnlyBuild:
     className: TouchInputModule
   - hash:
       serializedVersion: 2
-      Hash: 762a30c8d779b11af16ed9ce1f2d32fa
-    assemblyName: Unity.2D.IK.Runtime.dll
-    namespaceName: UnityEngine.U2D.IK
-    className: FabrikSolver2D
-  - hash:
-      serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: MainMenuController
-  - hash:
-      serializedVersion: 2
-      Hash: fb266b45858d26a4f244a67197edb8a6
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: ScoreManager
-  - hash:
-      serializedVersion: 2
-      Hash: d82e8c0c1fa347bccaff3544b48419ca
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: ScoreController
-  - hash:
-      serializedVersion: 2
       Hash: c3d9ee9125e992aa6a695a273c5e12a5
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: GoalController
+  - hash:
+      serializedVersion: 2
+      Hash: 762a30c8d779b11af16ed9ce1f2d32fa
+    assemblyName: Unity.2D.IK.Runtime.dll
+    namespaceName: UnityEngine.U2D.IK
+    className: FabrikSolver2D
   platform: 19
   scenePathNames:
   - Assets/Scenes/MainMenu.unity
+  - Assets/Scenes/Credit.unity
   - Assets/Scenes/Game.unity
   playerPath: D:/..1 GAME PROJECT/New folder/PONG.exe

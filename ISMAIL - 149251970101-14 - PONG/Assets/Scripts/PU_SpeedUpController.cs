@@ -5,9 +5,11 @@ using UnityEngine;
 public class PU_SpeedUpController : MonoBehaviour
 {
     public PowerUpManager manager;
-    public Collider2D ball;
-    public float magnitude;
-    public int deleteInterval;
+    //public Collider2D ball;
+    //public float magnitude;
+    //public Rigidbody2D rig;
+
+    public int deletePowerUp;
 
     private float waktu;
 
@@ -18,18 +20,30 @@ public class PU_SpeedUpController : MonoBehaviour
     private void Update() {
         waktu += Time.deltaTime;
 
-        if( waktu > deleteInterval)
+        if( waktu > deletePowerUp)
         {
             manager.RemovePowerUp(gameObject);
-            waktu -= deleteInterval;
+            waktu -= deletePowerUp;
+        }
+        
+    }
+
+    /*
+    private void OnTriggerEnter2D(Collider2D collision) {
+        if (collision.tag == "Ball")
+        {
+            ball.GetComponent<BallControl>().ActivatePUSpeedUp(magnitude);
+
+            StartCoroutine(ResetPower());
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision) {
-        if (collision == ball)
-        {
-            ball.GetComponent<BallControl>().ActivatePUSpeedUp(magnitude);
-            manager.RemovePowerUp(gameObject);
-        }
+    private IEnumerator ResetPower()
+    {
+        yield return new WaitForSeconds(2f);
+        ball.GetComponent<BallControl>().DeactivatePUSpeedUp(magnitude);
+        manager.RemovePowerUp(gameObject);
     }
+    */
+
 }
